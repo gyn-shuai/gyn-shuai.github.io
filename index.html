@@ -102,22 +102,19 @@
                                             
 
                                                 
-                                                                    <h1 id="221-最大正方形（leetcode）"><a href="#221-最大正方形（leetcode）" class="headerlink" title="221.最大正方形（leetcode）"></a>221.最大正方形（leetcode）</h1><p>在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。<br>示例:</p>
+                                                    <h1 id="221-最大正方形（leetcode）"><a href="#221-最大正方形（leetcode）" class="headerlink" title="221.最大正方形（leetcode）"></a>221.最大正方形（leetcode）</h1><p>在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。<br>示例:</p>
 <p>输入: </p>
 <p>1 0 1 0 0<br>1 0 1 1 1<br>1 1 1 1 1<br>1 0 0 1 0</p>
 <p>输出: 4</p>
-<p>思路：我们用动态规划来考虑这个问题，dp[i][j]表示以i，j为右下角，所有数据为1的的最长边长，我们只需要求出所有dp[i][j]来，取最大值的平方就是最大面积。<br>如果该位置的值是 0，则 dp(i, j) = 0，因为当前位置不可能在由 1 组成的正方形中；</p>
-<p>如果该位置的值是 1，则 dp(i, j) 的值由其上方、左方和左上方的三个相邻位置的 dp 值决定。具体而言，当前位置的元素值等于三个相邻位置的元素中的最小值加 11，状态转移方程如下：<br>dp(i,j)=min(dp(i−1,j),dp(i−1,j−1),dp(i,j−1))+1<img src="https://img-blog.csdnimg.cn/20200508173621850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MTExOTQ4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix.size()==<span class="number">0</span>||matrix[<span class="number">0</span>].size()==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = matrix.size();</span><br><span class="line">        <span class="keyword">int</span> m = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; <span class="title">dp</span><span class="params">(n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(m))</span></span>; <span class="comment">//构建和matrix一样大的vector</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(matrix[i][j]==<span class="string">'1'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==<span class="number">0</span>||j==<span class="number">0</span>) dp[i][j] =<span class="number">1</span>; <span class="comment">//如果是第一行或者第一列</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                dp[i][j]=min(min(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]),dp[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(dp[i][j],ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans*ans; <span class="comment">//结果要区平方</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="1277-统计全为1的正方形子矩阵"><a href="#1277-统计全为1的正方形子矩阵" class="headerlink" title="1277.统计全为1的正方形子矩阵"></a>1277.统计全为1的正方形子矩阵</h1><p>和上述方法相同，但是这里与一个技巧，最大边长为n，则matrix[i][j]就能分成n，n-1，n-2…..1，也就是ans直接加n就是该点所能贡献的正方形个数<br>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">countSquares</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n =matrix.size();</span><br><span class="line">        <span class="keyword">int</span> m = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; <span class="title">f</span><span class="params">(n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(m))</span></span>;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(matrix[i][j]==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==<span class="number">0</span>||j==<span class="number">0</span>) f[i][j]=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    f[i][j] = min(min(f[i<span class="number">-1</span>][j],f[i][j<span class="number">-1</span>]),f[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += f[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-                                                                        
+                                                        
+                                                            <a class="article-more-link" href="/2020/05/08/%E6%AD%A3%E6%96%B9%E5%BD%A2%EF%BC%88%E7%9F%A9%E9%98%B5dp%EF%BC%89/">
+                                                                阅读全文..
+                                                            </a>
+                                                            
+                                                                
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/08/%E6%AD%A3%E6%96%B9%E5%BD%A2%EF%BC%88%E7%9F%A9%E9%98%B5dp%EF%BC%89/" data-id="ck9y28yte0000va9kdjzv87zs" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/08/%E6%AD%A3%E6%96%B9%E5%BD%A2%EF%BC%88%E7%9F%A9%E9%98%B5dp%EF%BC%89/" data-id="ck9y2bp130001wt9ke6g75x5a" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -179,7 +176,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/07/%E9%80%86%E5%BA%8F%E5%AF%B9%E9%97%AE%E9%A2%98/" data-id="ck9wlwtnr00005c9k1n1p6lq4" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/07/%E9%80%86%E5%BA%8F%E5%AF%B9%E9%97%AE%E9%A2%98/" data-id="ck9y2bp1b0009wt9kdzykdzcr" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -241,7 +238,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/05/%E5%B7%AE%E5%88%86%E7%9F%A9%E9%98%B5%E6%A8%A1%E6%9D%BF/" data-id="ck9tg704q00001e9k5v1f9e25" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/05/%E5%B7%AE%E5%88%86%E7%9F%A9%E9%98%B5%E6%A8%A1%E6%9D%BF/" data-id="ck9y2bp170004wt9kf91cdck8" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -303,7 +300,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E8%BF%90%E7%AE%97/" data-id="ck9tg705000051e9kcyl77ckb" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E8%BF%90%E7%AE%97/" data-id="ck9y2bp1a0008wt9k8m95h8gs" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -365,7 +362,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/05/%E6%95%B4%E6%95%B0%E5%88%92%E5%88%86%E9%97%AE%E9%A2%98/" data-id="ck9tg704y00031e9k8yg3048f" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/05/%E6%95%B4%E6%95%B0%E5%88%92%E5%88%86%E9%97%AE%E9%A2%98/" data-id="ck9y2bp180005wt9kd4kqg1jz" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -427,7 +424,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/05/%E5%BF%AB%E9%80%9F%E5%B9%82-%E7%B4%A0%E6%95%B0%E7%AD%9B/" data-id="ck9tg704z00041e9kdjfn1bj6" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/05/%E5%BF%AB%E9%80%9F%E5%B9%82-%E7%B4%A0%E6%95%B0%E7%AD%9B/" data-id="ck9y2bp160003wt9khyzu3894" class="article-share-link">
                                             Share
                                         </a>
                                         
@@ -489,7 +486,7 @@
                                                                 
                                     </div>
                                     <footer class="article-footer">
-                                        <a data-url="http://yoursite.com/2020/05/05/%E5%BF%AB%E6%8E%92%E5%92%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E6%A8%A1%E6%9D%BF/" data-id="ck9tg704v00011e9k70njh33r" class="article-share-link">
+                                        <a data-url="http://yoursite.com/2020/05/05/%E5%BF%AB%E6%8E%92%E5%92%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E6%A8%A1%E6%9D%BF/" data-id="ck9y2bp0y0000wt9k0i40acf8" class="article-share-link">
                                             Share
                                         </a>
                                         
