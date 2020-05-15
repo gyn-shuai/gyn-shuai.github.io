@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="爱生活的小顾同学..">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    GUI答题程序 |
+    
+    Hi,Everyone</title>
+  
+    <link rel="shortcut icon" href="/images/gift.svg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hi,Everyone" type="application/atom+xml">
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-GUI答题程序" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      GUI答题程序
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2020/05/15/GUI%E7%AD%94%E9%A2%98%E7%A8%8B%E5%BA%8F/" class="article-date">
+  <time datetime="2020-05-15T04:42:02.000Z" itemprop="datePublished">2020-05-15</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <p>记录一下第一个GUI大程序，也是因为临近交作业的时候才临时抱佛脚，人的潜能总是无限的，因为时间紧而且很多知识都是刚学的，运用不太熟练，多见谅，以后有机会再优化一下代码，这里就放上主要代码（代码不全），若有兴趣可联系。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">package ansapp;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import javax.swing.border.Border;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.Vector;</span><br><span class="line"></span><br><span class="line">public class startDemo extends JFrame implements ActionListener &#123;</span><br><span class="line">    public startpanel spanel;</span><br><span class="line">    public JPanel panel1,panel2,panel3;</span><br><span class="line">    JLabel label;</span><br><span class="line">    JButton btn1,next,pre,commit;</span><br><span class="line">    JTextArea textArea;</span><br><span class="line">    JRadioButton abtn,bbtn,cbtn,dbtn;</span><br><span class="line">    ButtonGroup buttonGroup;</span><br><span class="line">    protected data[] questions;</span><br><span class="line">    protected int qnum, now;</span><br><span class="line">     startDemo()</span><br><span class="line">     &#123;</span><br><span class="line">         setVisible(true);</span><br><span class="line">         this.setSize(440,320);                                           &#x2F;&#x2F;设置窗口大小</span><br><span class="line">         this.setLocationRelativeTo(null);</span><br><span class="line">        setTitle(&quot;思政答题系统&quot;);</span><br><span class="line">         setResizable(false);</span><br><span class="line">         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span><br><span class="line">         &#x2F;&#x2F;Container container &#x3D; new Container();</span><br><span class="line">         spanel &#x3D; new startpanel();</span><br><span class="line">         btn1 &#x3D; new JButton();</span><br><span class="line">         btn1.setText(&quot;开始测试&quot;);</span><br><span class="line">         btn1.setBounds(160,200,80,60);</span><br><span class="line">         btn1.addActionListener(this); &#x2F;&#x2F;添加监听事件</span><br><span class="line">         spanel.add(btn1);</span><br><span class="line">         add(spanel, BorderLayout.CENTER);</span><br><span class="line">         &#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;</span><br><span class="line">         panel1 &#x3D;new JPanel();</span><br><span class="line">         panel2 &#x3D; new JPanel();</span><br><span class="line">         panel3 &#x3D; new JPanel();</span><br><span class="line">         label &#x3D; new JLabel(&quot;测试总时间30分钟&quot;);</span><br><span class="line">          textArea &#x3D; new JTextArea(20,30);</span><br><span class="line">          textArea.setLineWrap(true);</span><br><span class="line">         textArea.setEnabled(false);</span><br><span class="line">         abtn &#x3D;  new JRadioButton(&quot;A&quot;);&#x2F;&#x2F;初始化单选按钮</span><br><span class="line">         bbtn &#x3D;  new JRadioButton(&quot;B&quot;);</span><br><span class="line">         cbtn &#x3D;  new JRadioButton(&quot;C&quot;);</span><br><span class="line">         dbtn &#x3D;  new JRadioButton(&quot;D&quot;);</span><br><span class="line">         abtn.addActionListener(this);  &#x2F;&#x2F;添加监听事件</span><br><span class="line">         bbtn.addActionListener(this);</span><br><span class="line">         cbtn.addActionListener(this);</span><br><span class="line">         dbtn.addActionListener(this);</span><br><span class="line">         buttonGroup &#x3D; new ButtonGroup();</span><br><span class="line">         buttonGroup.add(abtn);</span><br><span class="line">         buttonGroup.add(bbtn);</span><br><span class="line">         buttonGroup.add(cbtn);</span><br><span class="line">         buttonGroup.add(dbtn);</span><br><span class="line">         panel1.add(label);</span><br><span class="line">         panel2.add(textArea);</span><br><span class="line">         panel3.add(abtn);</span><br><span class="line">         panel3.add(bbtn);</span><br><span class="line">         panel3.add(cbtn);</span><br><span class="line">         panel3.add(dbtn);</span><br><span class="line">         pre &#x3D;new JButton(&quot;上一题&quot;);</span><br><span class="line">         next &#x3D; new JButton(&quot;下一题&quot;);</span><br><span class="line">         commit &#x3D; new JButton(&quot;提交&quot;);</span><br><span class="line">         pre.addActionListener(this);  &#x2F;&#x2F;添加监听事件</span><br><span class="line">         next.addActionListener(this);</span><br><span class="line">         commit.addActionListener(this);</span><br><span class="line">         panel3.add(pre);</span><br><span class="line">         panel3.add(next);</span><br><span class="line">         panel3.add(commit);</span><br><span class="line">     &#125;</span><br><span class="line">     public void createst()   &#x2F;&#x2F;读入试题</span><br><span class="line">     &#123;</span><br><span class="line">         Vector&lt;data&gt; qList&#x3D;null;&#x2F;&#x2F;创建一个向量列表，用于动态增加试题</span><br><span class="line">         data qt;</span><br><span class="line">         String s,que&#x3D;&quot;&quot;;</span><br><span class="line">         try&#123;</span><br><span class="line">             FileReader fr &#x3D; new FileReader(&quot;&#x2F;Users&#x2F;guyaning&#x2F;IdeaProjects&#x2F;javatest&#x2F;src&#x2F;data.txt&quot;);</span><br><span class="line">             BufferedReader br &#x3D; new BufferedReader(fr);</span><br><span class="line">             qList &#x3D; new Vector&lt;data&gt;();</span><br><span class="line">             while((s&#x3D;br.readLine())!&#x3D;null)</span><br><span class="line">             &#123;</span><br><span class="line">                 if(s.equals(&quot;***&quot;))</span><br><span class="line">                 &#123;</span><br><span class="line">                     s&#x3D;br.readLine();</span><br><span class="line">                     while(!s.equals(&quot;@@@&quot;))</span><br><span class="line">                     &#123;</span><br><span class="line">                         que &#x3D; que+s+&#39;\n&#39;;</span><br><span class="line">                         s &#x3D; br.readLine();</span><br><span class="line">                     &#125;</span><br><span class="line">                 &#125;</span><br><span class="line">                 if(s.equals(&quot;@@@&quot;))</span><br><span class="line">                 &#123;</span><br><span class="line">                     s &#x3D; br.readLine();</span><br><span class="line">                     qt &#x3D; new data(que,s);</span><br><span class="line">                     que&#x3D;&quot;&quot;;</span><br><span class="line">                     qList.add(qt);</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             br.close();</span><br><span class="line">             fr.close();</span><br><span class="line">         &#125;catch (IOException e)</span><br><span class="line">         &#123;</span><br><span class="line">             e.printStackTrace();</span><br><span class="line">         &#125;</span><br><span class="line">         qnum &#x3D; qList.size();    &#x2F;&#x2F;统计题目数目</span><br><span class="line">         questions &#x3D; new data[qnum];</span><br><span class="line">         for(int i&#x3D;0;i&lt;qnum;i++)   &#x2F;&#x2F;放入到试题列表中</span><br><span class="line">         &#123;</span><br><span class="line">             questions[i] &#x3D; qList.get(i);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    public void showquestion()</span><br><span class="line">    &#123;</span><br><span class="line">        textArea.setText(&quot;&quot;);</span><br><span class="line">        textArea.append(questions[now].getQuestion());</span><br><span class="line">        setSelected(questions[now].getAns());</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new startDemo();</span><br><span class="line">    &#125;</span><br><span class="line">    public void setSelected(String s) &#123;&#x2F;&#x2F;设置单选按钮不重复模块</span><br><span class="line">        if (s.equals(&quot;A&quot;)) buttonGroup.setSelected(abtn.getModel(), true);</span><br><span class="line">        if (s.equals(&quot;B&quot;)) buttonGroup.setSelected(bbtn.getModel(), true);</span><br><span class="line">        if (s.equals(&quot;C&quot;)) buttonGroup.setSelected(cbtn.getModel(), true);</span><br><span class="line">        if (s.equals(&quot;D&quot;)) buttonGroup.setSelected(dbtn.getModel(), true);</span><br><span class="line">        if (s.equals(&quot;&quot;)) buttonGroup.clearSelection();</span><br><span class="line">    &#125;</span><br><span class="line">    public void showScore()</span><br><span class="line">    &#123;</span><br><span class="line">        int right&#x3D;0;</span><br><span class="line">        for(int i&#x3D;0;i&lt;qnum;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(questions[i].check())</span><br><span class="line">                right++;</span><br><span class="line">        &#125;</span><br><span class="line">        int score &#x3D; (int )(right*100&#x2F;qnum);</span><br><span class="line">        JOptionPane.showMessageDialog(null, &quot;答对&quot;+right+&quot;题，分数为&quot;+score);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;btn1)&#123;</span><br><span class="line">             createst();</span><br><span class="line">             for(int i&#x3D;0;i&lt;qnum;i++)</span><br><span class="line">             &#123;</span><br><span class="line">                 System.out.print(questions[i].getQuestion());</span><br><span class="line">             &#125;</span><br><span class="line">             now &#x3D;0;</span><br><span class="line">             showquestion();</span><br><span class="line">             remove(spanel);</span><br><span class="line">             this.add(panel1,BorderLayout.NORTH);</span><br><span class="line">             this.add(panel2,BorderLayout.CENTER);</span><br><span class="line">             this.add(panel3,BorderLayout.SOUTH);</span><br><span class="line">             pre.setEnabled(false);</span><br><span class="line">             repaint();</span><br><span class="line">             validate();</span><br><span class="line">         &#125;</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;abtn)  questions[now].setAns(&quot;A&quot;);&#x2F;&#x2F;选项按钮事件</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;bbtn) questions[now].setAns(&quot;B&quot;);</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;cbtn) questions[now].setAns(&quot;C&quot;);</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;dbtn) questions[now].setAns(&quot;D&quot;);</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;pre)</span><br><span class="line">         &#123;</span><br><span class="line">             now--;</span><br><span class="line">             if(now&#x3D;&#x3D;qnum-2) next.setEnabled(true);</span><br><span class="line">             if(now&#x3D;&#x3D;0) &#123;</span><br><span class="line">                 pre.setEnabled(false);</span><br><span class="line">             &#125;</span><br><span class="line">             showquestion();</span><br><span class="line">         &#125;</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;next)</span><br><span class="line">         &#123;</span><br><span class="line">             now++;</span><br><span class="line">             if(now&#x3D;&#x3D;1) pre.setEnabled(true);</span><br><span class="line">             if(now&#x3D;&#x3D;qnum-1) &#123;</span><br><span class="line">                 next.setEnabled(false);</span><br><span class="line">             &#125;</span><br><span class="line">             showquestion();</span><br><span class="line">         &#125;</span><br><span class="line">         if(e.getSource()&#x3D;&#x3D;commit)</span><br><span class="line">         &#123;</span><br><span class="line">                showScore();</span><br><span class="line">             commit.setEnabled(false);</span><br><span class="line">             System.exit(0);          &#x2F;&#x2F;退出</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200515125531786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MTExOTQ4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>        <img src="https://img-blog.csdnimg.cn/2020051512580179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MTExOTQ4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>        <img src="https://img-blog.csdnimg.cn/20200515125823106.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MTExOTQ4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://yoursite.com/2020/05/15/GUI%E7%AD%94%E9%A2%98%E7%A8%8B%E5%BA%8F/" data-id="cka7qioqr00001t9k6ne03y1x" class="article-share-link">
+                                            Share
+                                        </a>
+                                        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/05/08/%E6%AD%A3%E6%96%B9%E5%BD%A2%EF%BC%88%E7%9F%A9%E9%98%B5dp%EF%BC%89/" class="article-nav-link">
+        <strong class="article-nav-caption">Older</strong>
+        <div class="article-nav-title">正方形（矩阵dp）</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+                            
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 Hi,Everyone</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/gift.svg" alt="Hi,Everyone"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+</body>
+</html>
