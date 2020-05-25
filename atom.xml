@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T05:01:35.124Z</updated>
+  <updated>2020-05-25T03:50:53.701Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ST表和树状数组模板</title>
+    <link href="http://yoursite.com/2020/05/25/ST%E8%A1%A8%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://yoursite.com/2020/05/25/ST%E8%A1%A8%E5%92%8C%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E6%A8%A1%E6%9D%BF/</id>
+    <published>2020-05-25T03:16:28.000Z</published>
+    <updated>2020-05-25T03:50:53.701Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ST表模板&quot;&gt;&lt;a href=&quot;#ST表模板&quot; class=&quot;headerlink&quot; title=&quot;ST表模板&quot;&gt;&lt;/a&gt;ST表模板&lt;/h1&gt;&lt;p&gt; ST表模板，时间复杂度0（nlogn）预处理，0（1）查询，0（nlogn）空间&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="ST表 树状数组" scheme="http://yoursite.com/tags/ST%E8%A1%A8-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>GUI答题程序</title>
